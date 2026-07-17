@@ -173,7 +173,7 @@
         data-mode="connect">
         <!-- TopNavBar -->
         <header
-                class="bg-surface dark:bg-on-surface text-primary dark:text-primary-fixed font-body-md text-body-md docked full-width top-0 shadow-sm bg-surface dark:bg-on-surface shadow-sm z-50">
+                class="bg-surface dark:bg-on-surface text-primary dark:text-primary-fixed font-body-md text-body-md docked full-width top-0 shadow-sm bg-surface dark:bg-on-surface shadow-sm z-50 relative">
                 <div
                         class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
                         <div class="flex items-center gap-3">
@@ -189,7 +189,17 @@
                                                 href="https://cap-sdashboard-yfx4.vercel.app/leaderboard"
                                                 class="text-on-surface-variant dark:text-outline-variant hover:text-secondary hover:bg-secondary/10 px-4 py-2 rounded-lg transition-all duration-200 font-headline-md">Scoreboard</a>
                                 </nav>
+                                <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 rounded-lg text-primary hover:bg-secondary/10 transition-colors">
+                                        <span class="material-symbols-outlined">menu</span>
+                                </button>
                         </div>
+                </div>
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden md:hidden w-full bg-surface border-t border-surface-container py-4 px-margin-mobile flex-col gap-2 absolute top-full left-0 shadow-lg z-50">
+                        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVj1WYxkQtDvgEvdU5KWp-Nrc6w1mr8R9c2YtNnuy07nGsJ9Dsw4BmIrUYNA_cjttxK6Z-29ORIGFP/pubhtml?gid=472795159&single=true" class="text-on-surface-variant block hover:text-secondary hover:bg-secondary/10 px-4 py-3 rounded-lg transition-all duration-200 font-headline-md">Events</a>
+                        <a href="https://christ-byc-viewer.vercel.app" class="text-on-surface-variant block hover:text-secondary hover:bg-secondary/10 px-4 py-3 rounded-lg transition-all duration-200 font-headline-md">Maps</a>
+                        <a href="https://cap-sdashboard-yfx4.vercel.app" class="text-on-surface-variant block hover:text-secondary hover:bg-secondary/10 px-4 py-3 rounded-lg transition-all duration-200 font-headline-md">Room Allocation</a>
+                        <a href="https://cap-sdashboard-yfx4.vercel.app/leaderboard" class="text-on-surface-variant block hover:text-secondary hover:bg-secondary/10 px-4 py-3 rounded-lg transition-all duration-200 font-headline-md">Scoreboard</a>
                 </div>
         </header>
         <!-- Main Content -->
@@ -271,8 +281,14 @@
 
 
 
-
-
+        <script>
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenuBtn.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                        mobileMenu.classList.toggle('flex');
+                });
+        </script>
 </body>
 
 </html>
